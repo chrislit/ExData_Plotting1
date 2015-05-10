@@ -3,9 +3,17 @@ hpc.df <- read.table(file = "household_power_consumption.txt",
                      sep = ";", header = TRUE, na.strings = "?")
 
 # Convert the date col to Date objects
-hpc.df$Date <- as.Date(hpc.df$Date, format = "%d/%m/%Y")
+hpc.df$DateTime <- strptime(paste(hpc.df$Date, hpc.df$Time),
+                        format="%d/%m/%Y %H:%M:%S")
 
 # Subset to data between 2007-02-01 & 2007-02-02
-hpc.df <- hpc.df[hpc.df$Date >= as.Date("2007-02-01") &
-                   hpc.df$Date <= as.Date("2007-02-02"),]
+hpc.df <- hpc.df[hpc.df$DateTime >= as.POSIXlt("2007-02-01") &
+                   hpc.df$DateTime < as.POSIXlt("2007-02-03"),]
 
+# Plot the desired graph
+plot(hpc.df$DateTime, hpc.df$Global_active_power, type = "l",
+     ylab = "Global Active Power (kilowatts)", xlab = "")
+
+# Save the displayed plot to disk (Yes, I know this is an imperfect copy.)
+dev.copy(png, "plot2.png")
+dev.off()
