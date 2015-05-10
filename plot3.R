@@ -19,7 +19,7 @@ legend("topright", col=c("black", "red", "blue"), lty=1,
        legend=names(hpc.df)[7:9])
 
 # Redo the above, saving to a PNG instead
-png("plot3.png", height = 600, width = 600)
+png("plot3.png", height = 504, width = 504)
 plot(hpc.df$DateTime, hpc.df$Sub_metering_1, type="l",
      ylab = "Energy sub metering", xlab = "")
 lines(hpc.df$DateTime, hpc.df$Sub_metering_2, col="red")

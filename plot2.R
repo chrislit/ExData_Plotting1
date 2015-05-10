@@ -15,7 +15,7 @@ plot(hpc.df$DateTime, hpc.df$Global_active_power, type = "l",
      ylab = "Global Active Power (kilowatts)", xlab = "")
 
 # Redo the above, saving to a PNG instead
-png("plot2.png", height = 600, width = 600)
+png("plot2.png", height = 504, width = 504)
 plot(hpc.df$DateTime, hpc.df$Global_active_power, type = "l",
      ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()

@@ -33,7 +33,7 @@ with(hpc.df, plot(datetime, Global_reactive_power, type = "l"))
 
 
 # Redo the above, saving to a PNG instead
-png("plot4.png", height = 600, width = 600)
+png("plot4.png", height = 504, width = 504)
 
 # Set our graph dimensions: 2 x 2 plots
 par(mfcol = c(2,2))
@@ -48,7 +48,7 @@ plot(hpc.df$datetime, hpc.df$Sub_metering_1, type="l",
 lines(hpc.df$datetime, hpc.df$Sub_metering_2, col="red")
 lines(hpc.df$datetime, hpc.df$Sub_metering_3, col="blue")
 legend("topright", col=c("black", "red", "blue"), lty=1,
-       legend=names(hpc.df)[7:9])
+       bty="n", legend=names(hpc.df)[7:9])
 
 # Plot 3 (upper-right)
 with(hpc.df, plot(datetime, Voltage, type = "l"))

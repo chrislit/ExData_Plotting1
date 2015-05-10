@@ -17,7 +17,7 @@ hist(hpc.df$Global_active_power,
      main="Global Active Power")
 
 # Redo the above, saving to a PNG instead
-png("plot1.png", height = 600, width = 600)
+png("plot1.png", height = 504, width = 504)
 hist(hpc.df$Global_active_power,
      xlab="Global Active Power (kilowatts)",
      col="red",
