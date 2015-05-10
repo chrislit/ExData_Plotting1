@@ -16,7 +16,11 @@ hist(hpc.df$Global_active_power,
      col="red",
      main="Global Active Power")
 
-# Save the displayed plot to disk (Yes, I know this is an imperfect copy.)
-dev.copy(png, "plot1.png")
+# Redo the above, saving to a PNG instead
+png("plot1.png", height = 600, width = 600)
+hist(hpc.df$Global_active_power,
+     xlab="Global Active Power (kilowatts)",
+     col="red",
+     main="Global Active Power")
 dev.off()
 

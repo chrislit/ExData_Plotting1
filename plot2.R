@@ -14,6 +14,8 @@ hpc.df <- hpc.df[hpc.df$DateTime >= as.POSIXlt("2007-02-01") &
 plot(hpc.df$DateTime, hpc.df$Global_active_power, type = "l",
      ylab = "Global Active Power (kilowatts)", xlab = "")
 
-# Save the displayed plot to disk (Yes, I know this is an imperfect copy.)
-dev.copy(png, "plot2.png")
+# Redo the above, saving to a PNG instead
+png("plot2.png", height = 600, width = 600)
+plot(hpc.df$DateTime, hpc.df$Global_active_power, type = "l",
+     ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()
